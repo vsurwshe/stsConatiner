@@ -11,11 +11,15 @@ services:
         volumes:
             - /tmp/.X11-unix:/tmp/.X11-unix
             - ./src:/home/develop/ws
-            - /home/developer-5/.m2:/home/develop/.m2
-            - /usr/lib/jvm/java-8-openjdk-amd64:/usr/lib/jvm/java-8-openjdk-amd64
-            - /etc/java-8-openjdk:/etc/java-8-openjdk
+            - ./.m2:/home/develop/.m2
+            - ./jvm:/usr/lib/jvm/java-8-openjdk-amd64
+            - ./jdk:/etc/java-8-openjdk
         environment:
             - DISPLAY
         user: developer-5
         ports:
           - 8882:8080
+        networks: 
+          - cont
+networks: 
+   cont:
