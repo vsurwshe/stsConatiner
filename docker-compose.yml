@@ -10,10 +10,10 @@ services:
         container_name: "sts"
         volumes:
             - /tmp/.X11-unix:/tmp/.X11-unix
-            - ./src:/home/develop/ws
-            - ./.m2:/home/develop/.m2
-            - ./jvm:/usr/lib/jvm/java-8-openjdk-amd64
-            - ./jdk:/etc/java-8-openjdk
+            - "./src:/home/developer-5/ws"
+            - "./.m2:/home/developer-5/.m2"
+            - "./jvm:/usr/lib/jvm/java-8-openjdk-amd64"
+            - "./jdk:/etc/java-8-openjdk"
         environment:
             - DISPLAY
         user: developer-5
